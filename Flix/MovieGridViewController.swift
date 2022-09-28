@@ -6,14 +6,22 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class MovieGridViewController: UIViewController {
+class MovieGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
     
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     // Array of dictionaries
     var movies = [[String:Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         
         // Do any additional setup after loading the view.
         let url = URL(string: "https://api.themoviedb.org/3/movie/634649/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
@@ -28,21 +36,30 @@ class MovieGridViewController: UIViewController {
                 // Cast downloaded movies to array
                 self.movies = dataDictionary["results"] as! [[String:Any]]
                 
-                
+                self.collectionView.reloadData()
                 // Downloads and prints superheroes movies
                 print(self.movies)
                 
-                /*
-                 // MARK: - Navigation
-                 
-                 // In a storyboard-based application, you will often want to do a little preparation before navigation
-                 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                 // Get the new view controller using segue.destination.
-                 // Pass the selected object to the new view controller.
-                 }
-                 */
-                
+                                
             }
         }
+        task.resume()
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieGridCell", for: indexPath) as! MovieGridCell
+        
+        let movie = movies[indexPath.item]
+        
+        let baseUrl = "https://image.tmdb.org/t/p/w185"
+        let posterPath = movie["poster_path"] as! String
+        let posterUrl = URL(string: baseUrl + posterPath)!
+        
+        cell.posterView.af.setImage(withURL: posterUrl)
+        return cell
+    }
+    
 }

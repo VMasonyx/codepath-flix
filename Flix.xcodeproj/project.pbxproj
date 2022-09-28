@@ -20,6 +20,7 @@
 		BD1838AE28E33ADB008B129E /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = BD1838AD28E33ADB008B129E /* AlamofireImage */; };
 		BD5D9B9228E4AAD800CD5221 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D9B9128E4AAD800CD5221 /* MovieDetailsViewController.swift */; };
 		BD5D9B9628E4E43000CD5221 /* MovieGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D9B9528E4E43000CD5221 /* MovieGridViewController.swift */; };
+		BDA3B26E28E507E800A1E414 /* MovieGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3B26D28E507E800A1E414 /* MovieGridCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		BD1084F428E29CFC00EFFEC7 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		BD5D9B9128E4AAD800CD5221 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		BD5D9B9528E4E43000CD5221 /* MovieGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridViewController.swift; sourceTree = "<group>"; };
+		BDA3B26D28E507E800A1E414 /* MovieGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				BD1084CD28E2902B00EFFEC7 /* Assets.xcassets */,
 				BD1084CF28E2902B00EFFEC7 /* LaunchScreen.storyboard */,
 				BD1084D228E2902B00EFFEC7 /* Info.plist */,
+				BDA3B26D28E507E800A1E414 /* MovieGridCell.swift */,
 			);
 			path = Flix;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				BD1084F528E29CFC00EFFEC7 /* MovieCell.swift in Sources */,
 				BD1084C728E2902A00EFFEC7 /* SceneDelegate.swift in Sources */,
 				BD5D9B9628E4E43000CD5221 /* MovieGridViewController.swift in Sources */,
+				BDA3B26E28E507E800A1E414 /* MovieGridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

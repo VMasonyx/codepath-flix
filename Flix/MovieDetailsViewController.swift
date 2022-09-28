@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class MovieDetailsViewController: UIViewController {
+internal class MovieDetailsViewController: UIViewController {
 
     @IBOutlet weak var backdropView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
